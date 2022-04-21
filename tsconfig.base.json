@@ -16,6 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "@dev-exp/api-path": ["packages/shared/api/path/src/index.ts"],
+      "@dev-exp/data-storage": ["packages/shared/data/storage/src/index.ts"],
       "@dev-exp/util-dom": ["packages/shared/util/dom/src/index.ts"]
     }
   },
