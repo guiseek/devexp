@@ -1,0 +1,19 @@
+{
+  "extends": "../../../../.releaserc.json",
+  "tagFormat": "shared-api-path-v${version}",
+  "plugins": [
+    [
+      "@guiseek/tool-release",
+      {
+        "project": "shared-api-path"
+      }
+    ],
+    [
+      "@semantic-release/npm",
+      {
+        "pkgRoot": "dist/packages/shared/api/path"
+      }
+    ],
+    "@semantic-release/github"
+  ]
+}

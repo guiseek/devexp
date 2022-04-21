@@ -1,0 +1,40 @@
+{
+  "root": "packages/shared/api/path",
+  "sourceRoot": "packages/shared/api/path/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/shared/api/path",
+        "tsConfig": "packages/shared/api/path/tsconfig.lib.json",
+        "packageJson": "packages/shared/api/path/package.json",
+        "main": "packages/shared/api/path/src/index.ts",
+        "assets": ["packages/shared/api/path/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/shared/api/path/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/shared/api/path"],
+      "options": {
+        "jestConfig": "packages/shared/api/path/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "release": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "command": "npx semantic-release -e ./packages/shared/api/path/.releaserc.json"
+      }
+    }
+  },
+  "tags": ["type:api", "scope:shared"]
+}
