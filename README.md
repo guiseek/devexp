@@ -1,6 +1,6 @@
-# Devexp
+# dev-exp
 
-![developer experience](./assets/devexp.svg)
+![developer experience](./assets/dev-exp.svg)
 
 ---
 

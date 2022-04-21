@@ -9,9 +9,8 @@ const app = express();
 const controller = api(app, 'api');
 
 controller.get('users/:id', (req, res) => {
-  req.params.id
-})
-
+  req.params.id;
+});
 ```
 
 ---

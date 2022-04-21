@@ -29,7 +29,7 @@ module.exports = {
     },
   ],
 
-  scopes: [{ name: 'shared-util-dom', description: '@devexp/dom' }],
+  scopes: [{ name: 'shared-util-dom', description: '@dev-exp/util-dom' }],
 
   // override the messages, defaults are as follows
   messages: {
