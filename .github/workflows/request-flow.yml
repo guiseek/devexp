@@ -1,11 +1,11 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Release Flow
+name: Request Flow
 
 # Controls when the action will run.
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
-  push:
+  pull_request:
     branches:
       - main
       - beta
@@ -36,8 +36,5 @@ jobs:
         run: npx nx affected:test --base=origin/main
       - name: Build
         run: npx nx affected:build --base=origin/main --with-deps
-      - name: Release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npx nx affected --target release --base=origin/main
+      - name: Mapper
+        run: npx nx affected --target mapper --base=origin/main

@@ -1,0 +1,34 @@
+{
+  "root": "packages/shared/data/storage",
+  "sourceRoot": "packages/shared/data/storage/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/shared/data/storage",
+        "tsConfig": "packages/shared/data/storage/tsconfig.lib.json",
+        "packageJson": "packages/shared/data/storage/package.json",
+        "main": "packages/shared/data/storage/src/index.ts",
+        "assets": ["packages/shared/data/storage/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/shared/data/storage/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/shared/data/storage"],
+      "options": {
+        "jestConfig": "packages/shared/data/storage/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": ["type:data", "scope:shared", "lib:node"]
+}
