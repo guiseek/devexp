@@ -1,4 +1,4 @@
-export interface Storage<T> {
+export interface Storage<T extends { id: number }> {
   init(entityName: string, storagePath: string): Promise<void>;
 
   create(entity: T): Promise<T>;

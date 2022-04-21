@@ -1,6 +1,6 @@
+import { Storage } from './storage';
 import * as path from 'path';
 import * as fs from 'fs';
-import { Storage } from './storage';
 
 /**
  * A {@link Storage} implementation that stores data in-memory and in a JSON file.
