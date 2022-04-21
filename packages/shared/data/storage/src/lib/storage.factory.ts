@@ -1,16 +1,20 @@
+import { StorageImpl } from './storage.impl';
 import { Storage } from './storage';
 
 /**
  * A factory that creates a singleton {@link Storage} object.
  */
-export abstract class StorageFactory<T> {
-  private static storage: Storage<any>;
+export class StorageFactory<T extends { id: number }> {
+  private storage: Storage<T>;
 
-  static setStorage<T>(storage: T | any) {
-    StorageFactory.storage = storage;
+  setStorage(storage: Storage<T>) {
+    this.storage = storage;
   }
 
-  static getStorage<T>(): Storage<T> {
+  getStorage(): Storage<T> {
+    if (!this.storage) {
+      this.storage = new StorageImpl<T>();
+    }
     return this.storage;
   }
 }
