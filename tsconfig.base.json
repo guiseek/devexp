@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@devexp/dom": ["packages/shared/util/dom/src/index.ts"]
+      "@dev-exp/api-path": ["packages/shared/api/path/src/index.ts"],
+      "@dev-exp/util-dom": ["packages/shared/util/dom/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
