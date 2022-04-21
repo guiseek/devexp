@@ -2,7 +2,10 @@ import { NextFunction, Response, Request, Router } from 'express';
 import { StorageFactory, StorageImpl } from '@dev-exp/data-storage';
 import * as express from 'express';
 
-export function crud<T extends { id: number }>(entityName: string, storagePath: string): Router {
+export function crud<T extends { id: number }>(
+  entityName: string,
+  storagePath: string
+): Router {
   const router = express.Router();
   const factory = new StorageFactory<T>();
 
