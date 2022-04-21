@@ -1,0 +1,39 @@
+{
+  "root": "packages/shared/util/dom",
+  "sourceRoot": "packages/shared/util/dom/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/shared/util/dom",
+        "main": "packages/shared/util/dom/src/index.ts",
+        "tsConfig": "packages/shared/util/dom/tsconfig.lib.json",
+        "assets": ["packages/shared/util/dom/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/shared/util/dom/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/packages/shared/util/dom"],
+      "options": {
+        "jestConfig": "packages/shared/util/dom/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "release": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "command": "npx semantic-release -e ./packages/shared/util/dom/.releaserc.json"
+      }
+    }
+  },
+  "tags": ["type:util", "scope:shared", "lib:dom"]
+}

@@ -1,0 +1,19 @@
+{
+  "extends": "../../../../.releaserc.json",
+  "tagFormat": "shared-util-dom-v${version}",
+  "plugins": [
+    [
+      "@guiseek/tool-release",
+      {
+        "project": "shared-util-dom"
+      }
+    ],
+    [
+      "@semantic-release/npm",
+      {
+        "pkgRoot": "dist/packages/shared/util/dom"
+      }
+    ],
+    "@semantic-release/github"
+  ]
+}
